@@ -6,10 +6,12 @@ class Icecream {
 }
 
 class Chocolate extends Icecream{  
+  @Override
   void flavor(){System.out.println("Chocolate flavored Icecream");}   
 }  
 
 class Strawberry extends Icecream{  
+  @Override
   void flavor(){System.out.println("Strawberry flavored Icecream");}
 }
 public class Overriding{ 
