@@ -4,7 +4,7 @@ import java.util.Collections;
 import java.util.Map;
 import java.util.TreeMap;
 
-// Write a program to sort the objects in desc order using TreeMap
+// Write a program to sort the map value in desc order
 class Quote{
     int qId;
     String quote;
