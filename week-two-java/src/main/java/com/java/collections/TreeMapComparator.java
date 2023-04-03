@@ -31,11 +31,19 @@ class Employee {
 
 }
 
-// Comparator that sort elements according to employee name in descending order
+// Comparator that custom sort elements according to employee name in ascending order
+class OrderName implements Comparator<Employee> {
+    public int compare(Employee e1, Employee e2)
+    {
+        return e1.getName().compareTo(e2.getName());
+    }
+}
+
+// Comparator that custom sort elements according to employee id in ascending order
 class OrderId implements Comparator<Employee> {
     public int compare(Employee e1, Employee e2)
     {
-        return e2.getName().compareTo(e1.getName());
+        return e1.geteId() - e2.geteId();
     }
 }
 
@@ -44,18 +52,28 @@ public class TreeMapComparator {
     {
 
         // Creating TreeMap
-        TreeMap<Employee, Integer> map = new TreeMap<>(new OrderId());
+        TreeMap<Employee, Integer> map = new TreeMap<>(new OrderName());
 
         // Adding key, value to TreeMap
         map.put(new Employee("Keerthana", 1349), 1);
         map.put(new Employee("Ananth", 4432), 2);
         map.put(new Employee("Vinitha", 3671), 3);
 
-        System.out.println("TreeMap Keys sorted in descending order based on Employee Name: ");
-
-        // Print map using Entry
+        System.out.println("TreeMap Keys sorted in ascending order based on Employee Name: ");
+        // Iterator and print map using entrySet
         for (Map.Entry<Employee, Integer> entry :
             map.entrySet()) {
+            System.out.println("Key : (" + entry.getKey() + "), Value : " + entry.getValue());
+        }
+
+        TreeMap<Employee, Integer> map2 = new TreeMap<>(new OrderId());
+
+        map2.putAll(map);
+
+        System.out.println("\nTreeMap Keys sorted in ascending order based on Employee ID: ");
+        // Iterator and print map using entrySet
+        for (Map.Entry<Employee, Integer> entry :
+            map2.entrySet()) {
             System.out.println("Key : (" + entry.getKey() + "), Value : " + entry.getValue());
         }
     }
