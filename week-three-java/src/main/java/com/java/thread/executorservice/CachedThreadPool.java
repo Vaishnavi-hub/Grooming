@@ -17,7 +17,7 @@ public class CachedThreadPool {
         List<Future<Integer>> futureList = new ArrayList<>();
         for(int i = 1; i <= 5; i++ ){
             // submit the task for execution
-            Future<Integer> future = executorService.submit(new Task(i));
+            Future<Integer> future = executorService.submit(new CachedTask(i));
             futureList.add(future);
         }
 
@@ -34,10 +34,10 @@ public class CachedThreadPool {
     }
 }
 
-class Task implements Callable<Integer> {
+class CachedTask implements Callable<Integer> {
     private final int value;
 
-    public Task(int value) {
+    public CachedTask(int value) {
         this.value = value;
     }
 
