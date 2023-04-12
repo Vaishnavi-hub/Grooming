@@ -2,7 +2,7 @@ package com.java.thread.countdownlatch;
 
 import java.util.concurrent.CountDownLatch;
 
-// Create a Main Task and multiple subtasks. Main task will start execute only after the their subtasks were completed. 
+// Create a Main Task and multiple subtasks. Main task will start execute only after the subtasks were completed.
 public class MainTask {
     public static void main(String[] args) throws InterruptedException {
         // create CountDownLatch with 5 subtasks
