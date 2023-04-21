@@ -2,19 +2,19 @@ package com.java.designpatterns.prototype;
 
 public class TestPrototypePattern {
     public static void main(String[] args) throws CloneNotSupportedException {
-        Employee emp1 = new Employee();
-        emp1.setId(101);
-        emp1.setName("Keerthana");
-        emp1.setWork(new Work());
+        Course course1 = new Course();
+        course1.setId(101);
+        course1.setName("Keerthana");
+        course1.setReview(new Review());
 
         // creating object from emp1 using clone
-        Employee emp2 = emp1.clone();
+        Course course2 = course1.clone();
         
         // creating object from emp1 using copy constructor
-        Employee emp3 = new Employee(emp1);
+        Course course3 = new Course(course1);
 
-        System.out.println(emp1);
-        System.out.println(emp2);
-        System.out.println(emp3);
+        System.out.println(course1);
+        System.out.println(course2);
+        System.out.println(course3);
     }
 }

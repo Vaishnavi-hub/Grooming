@@ -1,5 +1,5 @@
 package com.java.designpatterns.prototype;
 
-public class Work {
+public class Review {
 
 }
