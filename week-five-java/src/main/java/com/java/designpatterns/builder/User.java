@@ -7,7 +7,7 @@ public class User {
     private String phoneNumber;
 
     // pass the builder class to the private constructor argument
-    private User(UserBuilder builder){
+    public User(UserBuilder builder){
         this.name = builder.name;
         this.age = builder.age;
         this.emailAddress = builder.emailAddress;
